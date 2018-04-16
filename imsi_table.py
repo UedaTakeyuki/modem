@@ -1,0 +1,9 @@
+imsi_table = {}
+imsi_table["234507095668058"] = {"carrier": "gosim"}
+imsi_table["234507098583492"] = {"carrier": "hologram"}
+imsi_table["440103145981003"] = {"carrier": "soracom"}
+imsi_table["270020400207084"] = {"carrier": "soracom"}
+imsi_table["440103170712280"] = {"carrier": "soracom"}
+imsi_table["295057330042272"] = {"carrier": "soracom"}
+imsi_table["295057330042269"] = {"carrier": "soracom"}
+#imsi_table[""] = {"carrier": ""}
