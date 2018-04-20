@@ -6,7 +6,7 @@ import sys
 import serial
 import argparse
 
-def read(at_command, device="/dev/gc_modem", timeout_time=0.01):
+def read(at_command, device="/dev/gc_modem", timeout_time=0.1):
 	result = []
 	s = serial.Serial(device, timeout = timeout_time)
 	s.write(at_command + '\r\n')
