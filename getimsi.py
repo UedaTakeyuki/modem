@@ -5,9 +5,10 @@ import imsi_table
 pattern = re.compile("(([0-9][0-9][0-9])([0-9][0-9])([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]))\r\n")
 
 def read():
-	imsi  = ""
-	mcc   = ""
-	mnc   = ""
+	imsi  	= ""
+	mcc   	= ""
+	mnc   	= ""
+	carrier = ""
 
 	lines = at.read("AT+CIMI")
 
@@ -17,10 +18,12 @@ def read():
 		imsi = matchOB.group(1)
 		mcc  = matchOB.group(2)
 		mnc  = matchOB.group(3)
-	return {"imsi": imsi, "mcc": mcc, "mnc": mnc}
+		if imsi in imsi_table.imsi_table:
+			carrier = imsi_table.imsi_table[imsi]["carrier"]
+		elif mcc+mnc in imsi_table.mccmnc_table:
+			carrier = imsi_table.mccmnc_table[mcc+mnc]["carrier"]
+	return {"imsi": imsi, "mcc": mcc, "mnc": mnc, "carrier": carrier}
 
 if __name__ == '__main__':
 	result = read()
 	print result
-	if result["imsi"] in imsi_table.imsi_table:
-		print imsi_table.imsi_table[result["imsi"]]
