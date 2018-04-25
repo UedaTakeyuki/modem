@@ -4,9 +4,9 @@ import at
 pattern = re.compile('^\+COPS:.*"(([0-9][0-9][0-9])([0-9][0-9]))".*\\r\\n')
 
 def read():
-	imsi  = ""
-	mcc   = ""
-	mnc   = ""
+	cop  = ""
+	mcc  = ""
+	mnc  = ""
 
 	lines = at.read("AT+COPS=3,2")
 	lines = at.read("AT+COPS?")
