@@ -1,0 +1,2 @@
+wait_times=6
+after_wait_command="sudo reboot"
