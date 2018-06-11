@@ -5,6 +5,6 @@ cwd=`dirname "${0}"`
 # ${0} が 相対パスの場合は cd して pwd を取得
 expr "${0}" : "/.*" > /dev/null || cwd=`(cd "${cwd}" && pwd)`
 
-${cwd}/modeminfos.sh
-${cwd}/settimezonebymodem.sh
-${cwd}/getkcell.sh
+${cwd}/modeminfos.sh || true
+${cwd}/settimezonebymodem.sh || true
+${cwd}/getkcell.sh || true
